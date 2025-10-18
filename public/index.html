@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Diet</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <div class="header">
+    <h1 id="username">Welcome to Personal Diet Plan</h1>
+    <p><img src="icons8-meals-50.png" alt="">Log your meals, track portions, and stay healthy with Indian cuisine!</p>
+  </div>
+
+  <div class="container">
+    <!-- Left side: Meal tracker -->
+    <div class="main">
+      <form id="Meal-form">
+        <label for="meal-name"><i class="fa-solid fa-bowl-food"></i>&nbsp;Meal Name / Dish</label>
+        <input type="text" id="meal-name" name="meal-name" placeholder="Enter Indian meal name" required>
+
+        <label for="meal-portion"><i class="fa-solid fa-utensils"></i>&nbsp;Quantity</label>
+        <input type="text" id="meal-portion" name="meal-portion" placeholder="Enter Quantity" required />
+
+        <label for="meal-notes"><i class="fa-solid fa-clipboard"></i>&nbsp;Notes (optional)</label>
+        <textarea name="meal-notes" id="meal-notes" placeholder="Add any notes or ingredients"></textarea>
+
+        <button type="submit">Add Meal</button>
+      </form>
+
+      <div class="selection">
+        <div id="nutrition-summary" style="font-weight: bold; margin-top: 10px;height: 20px;">
+          Total: 0 kcal | 0g Protein | 0g Fat
+        </div>
+        <hr>
+        <h2>Today's Meal Log</h2>
+        <ul id="meal-log">
+          <li>No meals logged yet.</li>
+        </ul>
+      </div>
+
+      <div style="background:#ddd; border-radius:10px; overflow:hidden;">
+        <div id="cal-progress" style="height:20px; width:0%; background:#d35400;"></div>
+      </div>
+    </div>
+
+    <!-- Right side: AI Coach Agent -->
+    <div class="coach-box">
+      <!-- <h2
+        style="font-size:2em; color:#409eff; text-shadow:0 0 10px #409eff,0 0 20px #409eff; display:flex; align-items:center;">
+        <span style="margin-right:10px;">🤖</span>
+        Your AI Coach
+      </h2> -->
+      <h2
+        style="font-size:2em; color:#34c759; text-shadow:0 0 10px #34c759,0 0 20px #7cf28f; display:flex; align-items:center;">
+        <span style="margin-right:10px;">🤖</span>
+        Smart AI Coach
+      </h2>
+
+
+      <input type="text" id="userQuestion" placeholder="Ask about your diet (e.g., Should I eat rice at night?)" />
+      <button class="coach-btn" onclick="askCoach()">Ask</button>
+      <div id="coachResponse">I’m your diet coach! Ask me anything.</div>
+    </div>
+  </div>
+
+  <script src="scrpit.js"></script>
+
+</body>
+
+</html>
